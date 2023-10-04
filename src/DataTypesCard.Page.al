@@ -3,6 +3,7 @@ page 50110  DataTypesCard
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Documents;
+    Caption = 'Data Types Card';
     // SourceTable = TableName;
 
   
