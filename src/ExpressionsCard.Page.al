@@ -1,5 +1,6 @@
 page 50111 "Expressions Card"
 {
+    // Properties
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Documents;
@@ -9,6 +10,7 @@ page 50111 "Expressions Card"
     {
         area(Content)
         {
+            #region -- Displays the Input forms
             group(Input)
             {
                 Caption = 'Input';
@@ -19,7 +21,6 @@ page 50111 "Expressions Card"
                     ToolTip = 'Enter a value for Value1.';
                     Caption = 'Value1';
                 }
-
                 field(Value2; Value2)
                 {
                     ApplicationArea = All;
@@ -27,19 +28,23 @@ page 50111 "Expressions Card"
                     Caption = 'Value2';
                 }
             }
+            #endregion
 
+
+            #region -- Displays the Output
             group(output)
             {
                  Caption = 'Output';
-                 field(Result; Result)
+                 field(Ans; Ans)
                  {
                     ApplicationArea = All;
                     ToolTip = 'The result of the operation.';
-	                Caption = 'Result';
+	                Caption = 'Ans';
                     Editable = false;
 
                  }
             }
+            #endregion
         }
     }
     
@@ -53,16 +58,20 @@ page 50111 "Expressions Card"
                 Caption = 'Execute';
 	            ToolTip = 'Click to calculate the result.';
 	            Image = ExecuteBatch;
+                ShortCutKey = 'Shift+Ctrl+D';
                 
                 trigger OnAction()
                 begin
-                    Result := Value1 > Value2;
+                if Value1 > Value2 then 
+                     Ans := Value1 - Value2
+                else
+                    Ans := Value1 + Value2;
+                Message('%1', Ans);
                 end;
             }
         }
     }
     
     var
-        myInt , Value1 , Value2: Integer;
-        Result: Boolean;
+        myInt , Value1 , Value2 , Ans: Integer;
 }
