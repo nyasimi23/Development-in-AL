@@ -74,4 +74,6 @@ page 50111 "Expressions Card"
     
     var
         myInt , Value1 , Value2 , Ans: Integer;
+
+        
 }
