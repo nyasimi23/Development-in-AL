@@ -1,3 +1,5 @@
+
+
 codeunit 50101 "Customer Rewards Ext Mgt"
 {
     EventSubscriberInstance = StaticAutomatic;
