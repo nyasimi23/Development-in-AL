@@ -43,7 +43,6 @@ table 50100 "Reward Level"
 
     trigger OnInsert();
     begin
-
         Validate("Minimum Reward Points");
     end;
 
